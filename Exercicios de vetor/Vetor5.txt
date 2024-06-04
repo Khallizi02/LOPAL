@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] vetor = new int[10];
+        int produtoPares = 1; // Inicializa com 1 para não afetar a multiplicação
+        int somaImpares = 0;
+
+        // Preenche o vetor com os números informados pelo usuário
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print("Informe o " + (i + 1) + "º número inteiro: ");
+            vetor[i] = scanner.nextInt();
+
+            if (vetor[i] % 2 == 0) {
+                // Multiplica os elementos pares
+                produtoPares *= vetor[i];
+            } else {
+                // Soma os elementos ímpares
+                somaImpares += vetor[i];
+            }
+        }
+
+        System.out.println("Produto dos elementos pares: " + produtoPares);
+        System.out.println("Soma dos elementos ímpares: " + somaImpares);
+    }
+}
